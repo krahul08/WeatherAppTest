@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">WeatherAppTest</string>
+    <string name="visibility">Visibility</string>
+    <string name="humidity">Humidity</string>
+    <string name="wind">Wind</string>
+    <string name="pressure">Pressure</string>
+    <string name="uv_index">UV Index</string>
+    <string name="sunrise_sunset">Sunrise/Sunset</string>
 </resources>
