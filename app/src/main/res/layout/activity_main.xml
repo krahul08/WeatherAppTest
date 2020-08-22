@@ -4,26 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/app_theme"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".views.MainActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:title="@string/app_name" />
+        android:layout_height="wrap_content">
 
-    <LinearLayout
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textColor="@color/color_white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#123"
-        android:orientation="vertical"
-        android:weightSum="1">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight=".3"
-            android:orientation="vertical">
+            android:background="@color/app_theme"
+            android:orientation="vertical"
+            android:weightSum="3">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -108,259 +127,299 @@
 
 
             </LinearLayout>
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight=".7"
-            android:orientation="vertical"
-            android:weightSum="1">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_small"
+                app:cardBackgroundColor="#030D25"
+                app:cardCornerRadius="@dimen/margin_small"
+                app:cardElevation="@dimen/margin_small">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/Image_size_small"
+                                android:layout_height="@dimen/Image_size_small"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="4dp"
+                                android:src="@drawable/wind"
+                                tools:targetApi="o" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="4dp"
+                                android:gravity="center"
+                                android:text="SE 0.8 M/S"
+                                android:textColor="@color/color_white"
+                                tools:targetApi="o" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="@string/wind"
+                                android:textColor="@color/color_light_white"
+                                tools:targetApi="o" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/Image_size_small"
+                                android:layout_height="@dimen/Image_size_small"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="4dp"
+                                android:src="@drawable/water_drop"
+                                tools:targetApi="o" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="4dp"
+                                android:gravity="center"
+                                android:text="SE 0.8 M/S"
+                                android:textColor="@color/color_white"
+                                tools:targetApi="o" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="@string/humidity"
+                                android:textColor="@color/color_light_white"
+                                tools:targetApi="o" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+
+                            <ImageView
+                                android:layout_width="@dimen/Image_size_small"
+                                android:layout_height="@dimen/Image_size_small"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="4dp"
+                                android:src="@drawable/eye"
+                                tools:targetApi="o" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="4dp"
+                                android:gravity="center"
+                                android:text="SE 0.8 M/S"
+                                android:textColor="@color/color_white"
+                                tools:targetApi="o" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="@string/visibility"
+                                android:textColor="@color/color_light_white"
+                                tools:targetApi="o" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_small"
+                        android:layout_weight=".5"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/Image_size_small"
+                                android:layout_height="@dimen/Image_size_small"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="4dp"
+                                android:src="@drawable/speed"
+                                tools:targetApi="o" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="4dp"
+                                android:gravity="center"
+                                android:text="SE 0.8 M/S"
+                                android:textColor="@color/color_white"
+                                tools:targetApi="o" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="@string/pressure"
+                                android:textColor="@color/color_light_white"
+                                tools:targetApi="o" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/Image_size_small"
+                                android:layout_height="@dimen/Image_size_small"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="4dp"
+                                android:src="@drawable/uv_pro"
+                                tools:targetApi="o" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="4dp"
+                                android:gravity="center"
+                                android:text="SE 0.8 M/S"
+                                android:textColor="@color/color_white"
+                                tools:targetApi="o" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="@string/uv_index"
+                                android:textColor="@color/color_light_white"
+                                tools:targetApi="o" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="4dp"
+                                android:src="@drawable/beach"
+                                tools:targetApi="o" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="4dp"
+                                android:gravity="center"
+                                android:text="SE 0.8 M/S"
+                                android:textColor="@color/color_white"
+                                tools:targetApi="o" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="@string/sunrise_sunset"
+                                android:textColor="@color/color_light_white"
+                                tools:targetApi="o" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight=".5"
-                android:orientation="horizontal"
-                android:weightSum="3">
+                android:layout_margin="@dimen/margin_small"
+                android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/weekly_weather_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-                    <ImageView
-                        android:layout_width="@dimen/Image_size_small"
-                        android:layout_height="@dimen/Image_size_small"
-                        android:layout_gravity="center"
-                        android:layout_marginVertical="4dp"
-                        android:src="@drawable/wind"
-                        tools:targetApi="o" />
+                </androidx.recyclerview.widget.RecyclerView>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginVertical="4dp"
-                        android:gravity="center"
-                        android:text="SE 0.8 M/S"
-                        android:textColor="@color/color_white"
-                        tools:targetApi="o" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/monthly_weather_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/margin_small">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:text="@string/wind"
-                        android:textColor="@color/color_light_white"
-                        tools:targetApi="o" />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="@dimen/Image_size_small"
-                        android:layout_height="@dimen/Image_size_small"
-                        android:layout_gravity="center"
-                        android:layout_marginVertical="4dp"
-                        android:src="@drawable/water_drop"
-                        tools:targetApi="o" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginVertical="4dp"
-                        android:gravity="center"
-                        android:text="SE 0.8 M/S"
-                        android:textColor="@color/color_white"
-                        tools:targetApi="o" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:text="@string/humidity"
-                        android:textColor="@color/color_light_white"
-                        tools:targetApi="o" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-
-                    <ImageView
-                        android:layout_width="@dimen/Image_size_small"
-                        android:layout_height="@dimen/Image_size_small"
-                        android:layout_gravity="center"
-                        android:layout_marginVertical="4dp"
-                        android:src="@drawable/eye"
-                        tools:targetApi="o" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginVertical="4dp"
-                        android:gravity="center"
-                        android:text="SE 0.8 M/S"
-                        android:textColor="@color/color_white"
-                        tools:targetApi="o" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:text="@string/visibility"
-                        android:textColor="@color/color_light_white"
-                        tools:targetApi="o" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_small"
-                android:layout_weight=".5"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="@dimen/Image_size_small"
-                        android:layout_height="@dimen/Image_size_small"
-                        android:layout_gravity="center"
-                        android:layout_marginVertical="4dp"
-                        android:src="@drawable/speed"
-                        tools:targetApi="o" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginVertical="4dp"
-                        android:gravity="center"
-                        android:text="SE 0.8 M/S"
-                        android:textColor="@color/color_white"
-                        tools:targetApi="o" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:text="@string/pressure"
-                        android:textColor="@color/color_light_white"
-                        tools:targetApi="o" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="@dimen/Image_size_small"
-                        android:layout_height="@dimen/Image_size_small"
-                        android:layout_gravity="center"
-                        android:layout_marginVertical="4dp"
-                        android:src="@drawable/uv_pro"
-                        tools:targetApi="o" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginVertical="4dp"
-                        android:gravity="center"
-                        android:text="SE 0.8 M/S"
-                        android:textColor="@color/color_white"
-                        tools:targetApi="o" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:text="@string/uv_index"
-                        android:textColor="@color/color_light_white"
-                        tools:targetApi="o" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_gravity="center"
-                        android:layout_marginVertical="4dp"
-                        android:src="@drawable/beach"
-                        tools:targetApi="o" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginVertical="4dp"
-                        android:gravity="center"
-                        android:text="SE 0.8 M/S"
-                        android:textColor="@color/color_white"
-                        tools:targetApi="o" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:text="@string/sunrise_sunset"
-                        android:textColor="@color/color_light_white"
-                        tools:targetApi="o" />
-
-                </LinearLayout>
+                </androidx.recyclerview.widget.RecyclerView>
 
 
             </LinearLayout>
-
 
         </LinearLayout>
-    </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
 </LinearLayout>

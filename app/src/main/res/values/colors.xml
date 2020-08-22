@@ -5,4 +5,5 @@
     <color name="colorAccent">#D81B60</color>
     <color name="color_white">#FFFFFF</color>
     <color name="color_light_white">#B5EBEBEB</color>
+    <color name="app_theme">#123</color>
 </resources>
