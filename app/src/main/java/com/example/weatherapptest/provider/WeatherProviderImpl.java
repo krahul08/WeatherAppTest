@@ -21,7 +21,7 @@ public class WeatherProviderImpl implements WeatherProvider {
 
     public WeatherProviderImpl() {
         serviceProvider = new RetrofitServiceProvider();
-        weatherApi = serviceProvider.getRetrofit().create(weatherApi.getClass());
+        weatherApi = serviceProvider.getRetrofit().create(WeatherApi.class);
     }
 
 
