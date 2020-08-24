@@ -4,7 +4,6 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
@@ -15,6 +14,8 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -86,6 +87,9 @@ public class MainActivity extends AppCompatActivity implements WeatherView {
     @BindView(R.id.weekly_weather_list)
     RecyclerView weekly_weather_list;
 
+    @BindView(R.id.progress_circular)
+    ProgressBar progress_circular;
+
 
     private WeatherPresenter weatherPresenter;
     private CurrentWeatherData currentWeatherData;
@@ -123,6 +127,12 @@ public class MainActivity extends AppCompatActivity implements WeatherView {
 
     @Override
     public void showProgress(boolean show) {
+        if (show) {
+            progress_circular.setVisibility(View.VISIBLE);
+        } else {
+            progress_circular.setVisibility(View.GONE);
+
+        }
 
     }
 
@@ -147,6 +157,9 @@ public class MainActivity extends AppCompatActivity implements WeatherView {
                 currentWeatherData.setHumidity(currentWeatherResponse.getMain().getHumidity());
                 currentWeatherData.setVisibility(currentWeatherResponse.getVisibility());
                 currentWeatherData.setPressure(currentWeatherResponse.getMain().getPressure());
+                for (int i = 0; i < currentWeatherResponse.getWeather().size(); i++) {
+                    currentWeatherData.setDescription(currentWeatherResponse.getWeather().get(i).getDescription());
+                }
 
                 DatabaseClient.getInstance(getApplicationContext()).getAppDatabase()
                         .weatherDao().insertAll(currentWeatherData);
@@ -159,8 +172,6 @@ public class MainActivity extends AppCompatActivity implements WeatherView {
                 super.onPostExecute(aVoid);
 
                 weatherPresenter.getFiveDayWeather(getString(R.string.city_name), UrlConstants.API_KEY);
-
-
             }
 
         }
@@ -197,6 +208,7 @@ public class MainActivity extends AppCompatActivity implements WeatherView {
                     visibility.setText((weatherDatabases.get(i).getVisibility()) + " km");
                     humidity.setText((weatherDatabases.get(i).getHumidity()) + " %");
                     wind_speed.setText((weatherDatabases.get(i).getWind()) + " km/h");
+                    weather_desc.setText(weatherDatabases.get(i).getDescription());
                 }
 
             }
@@ -216,7 +228,10 @@ public class MainActivity extends AppCompatActivity implements WeatherView {
         humidity.setText((response.getMain().getHumidity()) + " %");
         wind_speed.setText((response.getWind().getSpeed()) + " km/h");
         pressure.setText((response.getMain().getPressure()) + " mbar");
-        feels_like.setText("Feels" + (response.getMain().getFeels_like()) + " \u2109");
+        feels_like.setText("Feels: " + (response.getMain().getFeels_like()) + " \u2109");
+        for (int i = 0; i < response.getWeather().size(); i++) {
+            weather_desc.setText(response.getWeather().get(i).getDescription());
+        }
 
         try {
             final DateTimeFormatter formatter =
@@ -238,6 +253,35 @@ public class MainActivity extends AppCompatActivity implements WeatherView {
     @Override
     public void showFiveDaysWeather(FiveDayResponse fiveDayResponse) {
         setForecast(fiveDayResponse);
+
+//        Storing list of objects is not working
+
+
+//        class SaveTask extends AsyncTask<Void, Void, Void> {
+//
+//            @Override
+//            protected Void doInBackground(Void... voids) {
+//
+//                currentWeatherData = new CurrentWeatherData();
+//                currentWeatherData.setList(fiveDayResponse.getList());
+//
+//                DatabaseClient.getInstance(getApplicationContext()).getAppDatabase()
+//                        .weatherDao().insertAll(currentWeatherData);
+//                return null;
+//            }
+//
+//            @SuppressLint("SetTextI18n")
+//            @Override
+//            protected void onPostExecute(Void aVoid) {
+//                super.onPostExecute(aVoid);
+//
+//            }
+//
+//        }
+//        SaveTask saveTask = new SaveTask();
+//        saveTask.execute();
+
+
     }
 
     private void setForecast(FiveDayResponse fiveDayResponse) {
@@ -255,6 +299,7 @@ public class MainActivity extends AppCompatActivity implements WeatherView {
 
     @Override
     public void showError(String error) {
+        Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
 
     }
 }

@@ -6,13 +6,11 @@ import java.util.List;
 
 public class FiveDayResponse {
 
-
     @SerializedName("message")
     private double message;
 
     @SerializedName("list")
     private List<ItemHourly> list;
-
 
     public double getMessage() {
         return message;

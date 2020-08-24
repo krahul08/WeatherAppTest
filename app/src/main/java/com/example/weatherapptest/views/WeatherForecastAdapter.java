@@ -31,7 +31,7 @@ public class WeatherForecastAdapter extends RecyclerView.Adapter<RecyclerView.Vi
     private Context context;
     private List<ItemHourly> list;
 
-    public WeatherForecastAdapter(Context context) {
+    WeatherForecastAdapter(Context context) {
         this.context = context;
         if (context != null) {
             layoutInflater = LayoutInflater.from(context);
@@ -50,7 +50,6 @@ public class WeatherForecastAdapter extends RecyclerView.Adapter<RecyclerView.Vi
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         final WeatherForecastAdapter.listHolder listHolder = (WeatherForecastAdapter.listHolder) holder;
         final ItemHourly categoryListData = list.get(position);
-        Toast.makeText(context, "" + categoryListData.getDtTxt(), Toast.LENGTH_SHORT).show();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -68,13 +67,12 @@ public class WeatherForecastAdapter extends RecyclerView.Adapter<RecyclerView.Vi
                     String goal = outFormat.format(date_format);
 
                     listHolder.date_day.setText("" + goal);
-                    Log.d("ngkn", goal);
 
+                    listHolder.day_time.setText("" + time);
 
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
-
 
                 for (int i = 0; i < categoryListData.getWeather().size(); i++) {
                     listHolder.forecast_desc.setText(categoryListData.getWeather().get(i).getDescription());
@@ -97,7 +95,7 @@ public class WeatherForecastAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 
     public class listHolder extends RecyclerView.ViewHolder {
 
-        TextView date_day;
+        TextView date_day, day_time;
         TextView forecast_desc;
         TextView max_temp_forecast;
         ImageView weather_image;
@@ -106,6 +104,7 @@ public class WeatherForecastAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         public listHolder(View view) {
             super(view);
             date_day = view.findViewById(R.id.date_day);
+            day_time = view.findViewById(R.id.date_time);
             forecast_desc = view.findViewById(R.id.forecast_desc);
             max_temp_forecast = view.findViewById(R.id.max_temp_forecast);
             weather_image = view.findViewById(R.id.weather_image);

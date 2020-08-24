@@ -3,6 +3,14 @@ package com.example.weatherapptest.database;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+import androidx.room.TypeConverter;
+import androidx.room.TypeConverters;
+
+import com.example.weatherapptest.model.fivedayweather.FiveDayResponse;
+import com.example.weatherapptest.model.fivedayweather.ItemHourly;
+import com.example.weatherapptest.utils.ListTypeConverters;
+
+import java.util.List;
 
 @Entity(tableName = "CurrentWeatherData")
 public class CurrentWeatherData {
@@ -34,6 +42,18 @@ public class CurrentWeatherData {
     private int sea_level;
 
     private String description;
+
+//    @TypeConverters(ListTypeConverters.class)
+//    public List<ItemHourly> list;
+//
+//
+//    public List<ItemHourly> getList() {
+//        return list;
+//    }
+//
+//    public void setList(List<ItemHourly> list) {
+//        this.list = list;
+//    }
 
     public String getDescription() {
         return description;

@@ -20,6 +20,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginHorizontal="@dimen/margin_small"
                 android:background="@color/app_theme"
                 android:orientation="vertical">
 
@@ -39,21 +40,9 @@
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:padding="30dp"
-                        android:text="32"
+                        android:text="---"
                         android:textColor="@color/color_white"
                         android:textSize="50sp" />
-
-                    <TextView
-                        android:id="@+id/weather_desc"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginVertical="8dp"
-                        android:gravity="center"
-                        android:text="Heavy rain"
-                        android:textColor="@color/color_white"
-                        android:textSize="20sp"
-                        tools:targetApi="o" />
 
 
                     <LinearLayout
@@ -61,59 +50,72 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:orientation="horizontal"
-                        android:weightSum="2">
+                        android:orientation="horizontal">
 
                         <!--Center layout-->
                         <LinearLayout
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:layout_marginHorizontal="12dp"
+                            android:layout_marginHorizontal="20dp"
                             android:layout_marginVertical="8dp"
-                            android:layout_weight="1"
                             android:gravity="center"
                             android:orientation="horizontal"
-                            android:weightSum="1"
+                            android:weightSum="3"
                             tools:targetApi="o">
 
                             <TextView
                                 android:id="@+id/min_temp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_weight=".3"
+                                android:layout_weight="1"
                                 android:drawableStart="@drawable/ic_arrow_downward_blue_400_18dp"
                                 android:drawableLeft="@drawable/ic_arrow_downward_blue_400_18dp"
                                 android:drawablePadding="4dp"
-                                android:text="26"
+                                android:text="---"
                                 android:textColor="@color/color_white"
-                                android:textSize="12sp"
+                                android:textSize="14sp"
                                 tools:ignore="NestedWeights" />
 
                             <TextView
                                 android:id="@+id/max_temp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_weight=".3"
+                                android:layout_weight="1"
                                 android:drawableStart="@drawable/ic_arrow_upward_red_800_18dp"
                                 android:drawableLeft="@drawable/ic_arrow_upward_red_800_18dp"
                                 android:drawablePadding="4dp"
-                                android:text="36"
+                                android:text="---"
                                 android:textColor="@color/color_white"
-                                android:textSize="12sp" />
+                                android:textSize="14sp" />
 
                             <TextView
                                 android:id="@+id/feels_like"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_weight=".4"
-                                android:text="Feels: 36"
+                                android:layout_gravity="end"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:text="==="
                                 android:textColor="@color/color_white"
-                                android:textSize="12sp" />
+                                android:textSize="14sp" />
 
 
                         </LinearLayout>
                     </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/weather_desc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:gravity="center"
+                        android:text="Checking Weather..."
+                        android:textColor="@color/color_white"
+                        android:textSize="20sp"
+                        tools:targetApi="o" />
 
 
                 </LinearLayout>
@@ -122,6 +124,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="@dimen/margin_small"
+                    android:layout_marginTop="70dp"
                     app:cardBackgroundColor="#030D25"
                     app:cardCornerRadius="@dimen/margin_small"
                     app:cardElevation="@dimen/margin_small"
@@ -166,6 +169,7 @@
                                     android:layout_gravity="center"
                                     android:layout_marginVertical="4dp"
                                     android:gravity="center"
+                                    android:text="---"
                                     android:textColor="@color/color_white"
                                     tools:targetApi="o" />
 
@@ -204,6 +208,7 @@
                                     android:layout_gravity="center"
                                     android:layout_marginVertical="4dp"
                                     android:gravity="center"
+                                    android:text="---"
                                     android:textColor="@color/color_white"
                                     tools:targetApi="o" />
 
@@ -242,6 +247,7 @@
                                     android:layout_gravity="center"
                                     android:layout_marginVertical="4dp"
                                     android:gravity="center"
+                                    android:text="---"
                                     android:textColor="@color/color_white"
                                     tools:targetApi="o" />
 
@@ -261,8 +267,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/margin_small"
-                            android:layout_marginBottom="@dimen/margin_small"
+                            android:layout_marginVertical="@dimen/margin_small"
                             android:layout_weight=".5"
                             android:orientation="horizontal">
 
@@ -289,6 +294,7 @@
                                     android:layout_gravity="center"
                                     android:layout_marginVertical="4dp"
                                     android:gravity="center"
+                                    android:text="---"
                                     android:textColor="@color/color_white"
                                     tools:targetApi="o" />
 
@@ -326,6 +332,7 @@
                                     android:layout_gravity="center"
                                     android:layout_marginVertical="4dp"
                                     android:gravity="center"
+                                    android:text="---"
                                     android:textColor="@color/color_white"
                                     tools:targetApi="o" />
 
@@ -363,6 +370,7 @@
                                     android:layout_gravity="center"
                                     android:layout_marginVertical="4dp"
                                     android:gravity="center"
+                                    android:text="---"
                                     android:textColor="@color/color_white"
                                     tools:targetApi="o" />
 
@@ -388,7 +396,6 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/margin_small"
                     android:orientation="vertical">
 
                     <androidx.recyclerview.widget.RecyclerView
@@ -396,6 +403,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="@dimen/margin_small"
+                        tools:itemCount="10"
+                        tools:listitem="@layout/forecast_list_layout"
                         tools:targetApi="o">
 
                     </androidx.recyclerview.widget.RecyclerView>
@@ -403,14 +412,10 @@
 
                 </LinearLayout>
 
-                <ProgressBar
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center" />
-
             </LinearLayout>
 
             <ProgressBar
+                android:id="@+id/progress_circular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"

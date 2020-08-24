@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#13263A</color>
+    <color name="colorPrimaryDark">#061622</color>
+    <color name="colorAccent">#FFFFFF</color>
     <color name="color_white">#FFFFFF</color>
     <color name="color_light_white">#B5EBEBEB</color>
-    <color name="app_theme">#123</color>
+    <color name="app_theme">#13263A</color>
+    <color name="card_color">#2B5180</color>
     <color name="text_color">#1B3D5E</color>
 </resources>

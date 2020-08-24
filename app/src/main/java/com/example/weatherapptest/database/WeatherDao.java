@@ -13,9 +13,6 @@ public interface WeatherDao {
     @Query("SELECT * FROM CurrentWeatherData")
     List<CurrentWeatherData> getAll();
 
-//    @Query("SELECT * FROM WeatherForecast")
-//    List<WeatherForecast> getForecast();
-
     @Insert
     void insertAll(CurrentWeatherData weatherData);
 
