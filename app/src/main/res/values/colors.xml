@@ -6,4 +6,5 @@
     <color name="color_white">#FFFFFF</color>
     <color name="color_light_white">#B5EBEBEB</color>
     <color name="app_theme">#123</color>
+    <color name="text_color">#1B3D5E</color>
 </resources>

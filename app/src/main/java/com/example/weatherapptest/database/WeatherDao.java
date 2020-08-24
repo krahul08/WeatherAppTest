@@ -3,16 +3,23 @@ package com.example.weatherapptest.database;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import java.util.List;
 
 @Dao
 public interface WeatherDao {
-    @Query("SELECT * FROM weatherDatabase")
-    List<WeatherDatabase> getAll();
 
+    @Query("SELECT * FROM CurrentWeatherData")
+    List<CurrentWeatherData> getAll();
+
+//    @Query("SELECT * FROM WeatherForecast")
+//    List<WeatherForecast> getForecast();
 
     @Insert
-    void insertAll(WeatherDatabase weatherData);
+    void insertAll(CurrentWeatherData weatherData);
+
+    @Update
+    void update(CurrentWeatherData weatherData);
 
 }

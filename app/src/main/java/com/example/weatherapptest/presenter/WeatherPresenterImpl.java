@@ -1,5 +1,7 @@
 package com.example.weatherapptest.presenter;
 
+import android.util.Log;
+
 import com.example.weatherapptest.CurrentWeatherCallback;
 import com.example.weatherapptest.FiveDayWeatherCallback;
 import com.example.weatherapptest.model.currentweather.CurrentWeatherResponse;
@@ -21,6 +23,8 @@ public class WeatherPresenterImpl implements WeatherPresenter {
 
     @Override
     public void getCurrentWeather(String city, String apiKey) {
+        Log.d("afaa", "Working2000");
+
         weatherView.showProgress(true);
         weatherProvider.getCurrentWeather(city, apiKey, new CurrentWeatherCallback() {
             @Override
@@ -28,6 +32,8 @@ public class WeatherPresenterImpl implements WeatherPresenter {
                 try {
                     weatherView.showProgress(false);
                     weatherView.showCurrentWeather(currentWeatherResponse);
+                    Log.d("afaa", "Working2");
+
 
                 } catch (Exception e) {
                     e.printStackTrace();

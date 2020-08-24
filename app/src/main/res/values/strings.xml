@@ -5,6 +5,8 @@
     <string name="wind">Wind</string>
     <string name="pressure">Pressure</string>
     <string name="uv_index">UV Index</string>
-    <string name="sunrise_sunset">Sunrise/Sunset</string>
+    <string name="sunrise_sunset">Sunset</string>
     <string name="api_key">16f5e1762107131278869035228bd225</string>
+    <string name="city_name">Raipur</string>
+    <string name="sunrise">Sunrise</string>
 </resources>

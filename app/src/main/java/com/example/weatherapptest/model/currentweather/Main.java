@@ -19,11 +19,22 @@ public class Main {
     @SerializedName("pressure")
     private double pressure;
 
+    @SerializedName("feels_like")
+    private double feels_like;
+
     @SerializedName("sea_level")
     private double seaLevel;
 
     @SerializedName("temp_max")
     private double tempMax;
+
+    public double getFeels_like() {
+        return feels_like;
+    }
+
+    public void setFeels_like(double feels_like) {
+        this.feels_like = feels_like;
+    }
 
     public double getTemp() {
         return temp;

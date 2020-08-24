@@ -6,11 +6,6 @@ import java.util.List;
 
 public class FiveDayResponse {
 
-    @SerializedName("cnt")
-    private int cnt;
-
-    @SerializedName("cod")
-    private String cod;
 
     @SerializedName("message")
     private double message;
@@ -18,21 +13,6 @@ public class FiveDayResponse {
     @SerializedName("list")
     private List<ItemHourly> list;
 
-    public int getCnt() {
-        return cnt;
-    }
-
-    public void setCnt(int cnt) {
-        this.cnt = cnt;
-    }
-
-    public String getCod() {
-        return cod;
-    }
-
-    public void setCod(String cod) {
-        this.cod = cod;
-    }
 
     public double getMessage() {
         return message;

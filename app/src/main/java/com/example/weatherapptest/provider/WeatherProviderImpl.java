@@ -1,5 +1,7 @@
 package com.example.weatherapptest.provider;
 
+import android.util.Log;
+
 import com.example.weatherapptest.CurrentWeatherCallback;
 import com.example.weatherapptest.FiveDayWeatherCallback;
 import com.example.weatherapptest.api.WeatherApi;
@@ -32,6 +34,8 @@ public class WeatherProviderImpl implements WeatherProvider {
             @Override
             public void onResponse(Call<CurrentWeatherResponse> call, Response<CurrentWeatherResponse> response) {
                 currentWeatherCallback.onSuccess(response.body());
+                Log.d("afaa", "Working log");
+
             }
 
             @Override

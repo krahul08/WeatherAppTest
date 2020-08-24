@@ -8,10 +8,10 @@ public class Sys {
     private String country;
 
     @SerializedName("sunrise")
-    private int sunrise;
+    private long sunrise;
 
     @SerializedName("sunset")
-    private int sunset;
+    private long sunset;
 
     @SerializedName("message")
     private double message;
@@ -24,27 +24,30 @@ public class Sys {
         this.country = country;
     }
 
-    public int getSunrise() {
-        return sunrise;
-    }
-
-    public void setSunrise(int sunrise) {
-        this.sunrise = sunrise;
-    }
-
-    public int getSunset() {
-        return sunset;
-    }
-
-    public void setSunset(int sunset) {
-        this.sunset = sunset;
-    }
 
     public double getMessage() {
         return message;
     }
 
+    public long getSunrise() {
+        return sunrise;
+    }
+
+    public void setSunrise(long sunrise) {
+        this.sunrise = sunrise;
+    }
+
+    public long getSunset() {
+        return sunset;
+    }
+
+    public void setSunset(long sunset) {
+        this.sunset = sunset;
+    }
+
     public void setMessage(double message) {
         this.message = message;
     }
+
+
 }

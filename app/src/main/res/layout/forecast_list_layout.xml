@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_small"
+    app:cardBackgroundColor="@color/app_theme"
+    app:cardCornerRadius="@dimen/margin_small">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/date_day"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/margin_small"
+            android:gravity="center"
+            android:text="Monday"
+            android:textColor="@color/color_white"
+            tools:targetApi="o" />
+
+
+        <ImageView
+            android:id="@+id/weather_image"
+            android:layout_width="@dimen/Image_size_small"
+            android:layout_height="@dimen/Image_size_small"
+            android:layout_gravity="center"
+            android:layout_marginVertical="@dimen/margin_small"
+            android:src="@drawable/speed"
+            tools:targetApi="o" />
+
+        <TextView
+            android:id="@+id/forecast_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/margin_small"
+            android:gravity="center"
+            android:text="Monday"
+            android:textColor="@color/color_white"
+            tools:targetApi="o" />
+
+        <TextView
+            android:id="@+id/max_temp_forecast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/margin_small"
+            android:gravity="center"
+            android:text="Monday"
+            android:textColor="@color/color_white"
+            tools:targetApi="o" />
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
+

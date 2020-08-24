@@ -1,20 +1,17 @@
 package com.example.weatherapptest.model.currentweather;
 
 import com.example.weatherapptest.model.commondataresponse.Clouds;
-import com.example.weatherapptest.model.commondataresponse.Coord;
 import com.example.weatherapptest.model.commondataresponse.WeatherItem;
 import com.example.weatherapptest.model.commondataresponse.Wind;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
+
 public class CurrentWeatherResponse {
 
     @SerializedName("dt")
     private int dt;
-
-    @SerializedName("coord")
-    private Coord coord;
 
     @SerializedName("weather")
     private List<WeatherItem> weather;
@@ -34,11 +31,14 @@ public class CurrentWeatherResponse {
     @SerializedName("id")
     private int id;
 
-    @SerializedName("Sys")
+    @SerializedName("sys")
     private Sys sys;
 
     @SerializedName("base")
     private String base;
+
+    @SerializedName("visibility")
+    private int visibility;
 
     @SerializedName("wind")
     private Wind wind;
@@ -47,16 +47,16 @@ public class CurrentWeatherResponse {
         return dt;
     }
 
+    public int getVisibility() {
+        return visibility;
+    }
+
+    public void setVisibility(int visibility) {
+        this.visibility = visibility;
+    }
+
     public void setDt(int dt) {
         this.dt = dt;
-    }
-
-    public Coord getCoord() {
-        return coord;
-    }
-
-    public void setCoord(Coord coord) {
-        this.coord = coord;
     }
 
     public List<WeatherItem> getWeather() {
